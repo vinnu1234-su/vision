@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Well Vision HomeAppliances Pvt. Ltd</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            background-color: #ADD8E6; /* Light blue background */
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #004080;
+            text-shadow: 1px 1px 3px #ffffff;
+        }
+
+        .icon-container {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .icon-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .fa {
+            color: #004080;
+            transition: color 0.3s;
+        }
+
+        .fa-whatsapp:hover {
+            color: #25D366;
+        }
+
+        .fa-phone:hover {
+            color: #0a84ff;
+        }
+
+        .fa-envelope:hover {
+            color: #ff4500;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .label {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #004080;
+        }
+
+        .upload-container {
+            margin-top: 40px;
+        }
+
+        .upload-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #004080;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-btn:hover {
+            background-color: #00264d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Well Vision HomeAppliances Pvt. Ltd</h1>
+
+    <!-- WhatsApp Icon -->
+    <div class="icon-container">
+        <a href="#" onclick="sendWhatsApp()" title="WhatsApp">
+            <i class="fa fa-whatsapp" style="font-size:48px"></i>
+            <span class="label">Send WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Phone Call Icon -->
+    <div class="icon-container">
+        <a href="#" onclick="makePhoneCall()" title="Phone Call">
+            <i class="fa fa-phone" style="font-size:48px"></i>
+            <span class="label">Make Phone Call</span>
+        </a>
+    </div>
+
+    <!-- Email Icon -->
+    <div class="icon-container">
+        <a href="#" onclick="sendEmail()" title="Email">
+            <i class="fa fa-envelope" style="font-size:48px"></i>
+            <span class="label">Send Email</span>
+        </a>
+    </div>
+
+    <!-- Upload Files Button -->
+    <div class="upload-container">
+        <button class="upload-btn" onclick="redirectToUpload()">Upload Files</button>
+    </div>
+
+    <script>
+        function sendWhatsApp() {
+            var phoneNumber = prompt("Enter the phone number for WhatsApp (include country code, e.g., +91 for India):");
+            if (phoneNumber) {
+                window.open('https://wa.me/' + phoneNumber, '_blank');
+            } else {
+                alert("No phone number entered!");
+            }
+        }
+
+        function makePhoneCall() {
+            var phoneNumber = prompt("Enter the phone number to call:");
+            if (phoneNumber) {
+                window.location.href = 'tel:' + phoneNumber;
+            } else {
+                alert("No phone number entered!");
+            }
+        }
+
+        function sendEmail() {
+            var emailAddress = prompt("Enter the email address:");
+            if (emailAddress) {
+                window.location.href = 'mailto:' + emailAddress;
+            } else {
+                alert("No email address entered!");
+            }
+        }
+
+        function redirectToUpload() {
+            window.location.href = "upload.html"; // Redirect to upload page
+        }
+    </script>
+
+</body>
+</html>
